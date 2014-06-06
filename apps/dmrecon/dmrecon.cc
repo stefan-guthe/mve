@@ -205,7 +205,11 @@ main (int argc, char** argv)
         fancyProgressPrinter.addRefViews(listIDs);
 
 #pragma omp parallel for schedule(dynamic, 1)
+#if !defined(_MSC_VER)
         for (std::size_t i = 0; i < listIDs.size(); ++i)
+#else
+        for (int i = 0; i < listIDs.size(); ++i)
+#endif
         {
             std::size_t id = listIDs[i];
             if (id >= views.size())
