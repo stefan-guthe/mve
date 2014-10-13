@@ -22,6 +22,13 @@ if(WIN32 AND MSVC)
     endif()
 endif()
 
+if(WIN32)
+	set(3RDPARTY_BUILD_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/bin/")
+	message(${3RDPARTY_BUILD_PATH})
+	
+	install(DIRECTORY ${3RDPARTY_BUILD_PATH} DESTINATION ${CMAKE_INSTALL_SYSTEM_RUNTIME_DESTINATION} FILES_MATCHING PATTERN "*.dll")
+endif()
+
 add_subdirectory(bundle2ply)
 add_subdirectory(dmrecon)
 add_subdirectory(makescene)

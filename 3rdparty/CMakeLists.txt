@@ -118,21 +118,21 @@ ExternalProject_Add(glew
 		COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_BINARY_DIR}/build/glew/src/glew/bin/${VS_CONFIG}/${VS_PLATFORM} ${CMAKE_CURRENT_SOURCE_DIR}/bin
 	BUILD_IN_SOURCE 1)
 
-ExternalProject_Add(qt5
-	PREFIX qt5
-	URL ${QT5_URL}
-	URL_HASH SHA256=a75a07b886b54023aeffb2daae552a65062c9c1f14d410acad0d47341c45539d
-	CONFIGURE_COMMAND
-		configure -debug-and-release -opensource -shared -no-audio-backend -mp
-				   -opengl desktop -skip qtactiveqt -skip qtconnectivity
-				   -skip qtdeclarative -skip qtdoc -skip qtgraphicaleffects
-				   -skip qtlocation -skip qtmultimedia -skip qtquick1
-				   -skip qtquickcontrols -skip qtscript -skip qtsensors
-				   -skip qtserialport -skip qttools -skip qttranslations
-				   -skip qtwebkit -skip qtwebkit-examples
-	BUILD_COMMAND nmake
-	BUILD_IN_SOURCE 1
-	INSTALL_COMMAND "")
+#ExternalProject_Add(qt5
+#	PREFIX qt5
+#	URL ${QT5_URL}
+#	URL_HASH SHA256=a75a07b886b54023aeffb2daae552a65062c9c1f14d410acad0d47341c45539d
+#	CONFIGURE_COMMAND
+#		configure -debug-and-release -opensource -shared -no-audio-backend -mp
+#				   -opengl desktop -skip qtactiveqt -skip qtconnectivity
+#				   -skip qtdeclarative -skip qtdoc -skip qtgraphicaleffects
+#				   -skip qtlocation -skip qtmultimedia -skip qtquick1
+#				   -skip qtquickcontrols -skip qtscript -skip qtsensors
+#				   -skip qtserialport -skip qttools -skip qttranslations
+#				   -skip qtwebkit -skip qtwebkit-examples
+#	BUILD_COMMAND nmake
+#	BUILD_IN_SOURCE 1
+#	INSTALL_COMMAND "")
 
 ExternalProject_Add(gtest
 	PREFIX build/gtest
