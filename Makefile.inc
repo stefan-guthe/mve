@@ -34,6 +34,7 @@ vpath libmve_math.a ${MVE_ROOT}/libs/math/
 vpath libmve.a ${MVE_ROOT}/libs/mve/
 vpath libmve_ogl.a ${MVE_ROOT}/libs/ogl/
 vpath libmve_util.a ${MVE_ROOT}/libs/util/
+vpath libmve_sfm.a ${MVE_ROOT}/libs/sfm/
 
 # Autogenerate dependencies.
 Makefile.dep: [^_]*.cc
