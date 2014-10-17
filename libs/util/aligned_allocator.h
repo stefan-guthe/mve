@@ -27,7 +27,8 @@ struct AlignedAllocator
 {
 public:
 #ifdef _MSC_VER
-    typedef T_raw T __declspec(align(alignment));
+	typedef __declspec(align(32)) T_raw T;
+    //typedef __declspec(align( alignment )) T_raw T ;
 #else
     typedef T_raw T __attribute__((aligned(alignment)));
 #endif

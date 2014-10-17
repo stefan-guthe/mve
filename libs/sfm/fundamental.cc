@@ -185,8 +185,8 @@ pose_from_essential (EssentialMatrix const& matrix,
     result->at(3).t = -result->at(0).t;
 
     // FIXME: Temporary sanity check.
-    if (!MATH_EPSILON_EQ(math::matrix_determinant(result->at(0).R), 1.0, 1e-3))
-        throw std::runtime_error("Invalid rotation matrix");
+	if (!(((1.0 - 1e-3) <= math::matrix_determinant(result->at(0).R)) && (math::matrix_determinant(result->at(0).R) <= (1.0 + 1e-3))))
+			throw std::runtime_error("Invalid rotation matrix");
 }
 
 void

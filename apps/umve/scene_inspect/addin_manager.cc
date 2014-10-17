@@ -4,6 +4,7 @@
 
 #include "guihelpers.h"
 #include "scene_inspect/addin_manager.h"
+#include <iostream>
 
 AddinManager::AddinManager (GLWidget* gl_widget, QTabWidget* tab_widget)
     : tab_widget(tab_widget)

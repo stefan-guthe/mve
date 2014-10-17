@@ -11,7 +11,8 @@ SFM_NAMESPACE_BEGIN
 bool
 homography_dlt (Correspondences const& points, HomographyMatrix* result)
 {
-    if (points.size() < 4)
+	return true;
+	if (points.size() < 4)
         throw std::invalid_argument("At least 4 matches required");
 
     /* Create 2Nx9 matrix A. Each correspondence creates two rows in A. */

@@ -770,7 +770,7 @@ SfmControls::on_apply_to_scene (void)
         QCoreApplication::processEvents();
 
 #pragma omp parallel for
-    for (std::size_t i = 0; i < bundle_cams.size(); ++i)
+    for (long long i = 0; i < bundle_cams.size(); ++i)
     {
         if (win.wasCanceled())
             continue;
